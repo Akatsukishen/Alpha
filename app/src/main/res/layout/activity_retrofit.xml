@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RetrofitActivity"
+    >
+
+    <TextView
+        android:id="@+id/tv_base"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="交易市场:"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="10dp"
+        />
+
+    <RadioGroup
+        android:id="@+id/rg_base"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/tv_base"
+        android:layout_alignTop="@id/tv_base"
+        android:layout_alignBottom="@id/tv_base"
+        android:orientation="horizontal"
+        >
+        <RadioButton
+            android:id="@+id/rb_qc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="QC"
+            android:checked="true"
+            />
+        <RadioButton
+            android:id="@+id/rb_btc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BTC"
+            />
+        <RadioButton
+            android:id="@+id/rb_usdt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="USDT"
+            />
+    </RadioGroup>
+
+    <LinearLayout
+        android:id="@+id/linear_coin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_below="@id/tv_base"
+        >
+
+        <TextView
+            android:id="@+id/tv_coin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="虚拟货币:"
+            />
+
+        <EditText
+            android:id="@+id/ed_coin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:hint="HSR"
+            />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_request"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:onClick="getMarket"
+        android:text="请求行情"
+        android:layout_below="@id/linear_coin"
+        android:layout_marginBottom="10dp"
+        />
+
+    <Button
+        android:id="@+id/btn_stop"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:onClick="stopCheck"
+        android:text="停止查询"
+        android:layout_below="@id/btn_request"
+        android:layout_marginBottom="10dp"
+        />
+
+    <TextView
+        android:id="@+id/tv_result"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"/>
+
+</RelativeLayout>
